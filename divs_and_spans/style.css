@@ -1,0 +1,13 @@
+div {
+  border: 1px solid red;
+  display: block;
+  width: 400px;
+  height: 600px;
+}
+
+span {
+  border: 1px solid green;
+  display: inline;
+  width: 400px; /* Width and Height will not work in 'display' type inline element */
+  height: 600px;
+}

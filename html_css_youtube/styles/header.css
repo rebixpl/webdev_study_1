@@ -21,14 +21,78 @@
 }
 
 .middle-section {
-  background-color: lightpink;
   flex: 1;
   margin-left: 70px;
   margin-right: 35px;
   max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+.search-bar {
+  flex: 1;
+  height: 34px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 2px;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05); /* inset will put the shadow inside of an element instead of outside */
+  width: 0; /* removes the default width, thus allowing the searchbar to shring as much as possible */
+}
+
+.search-bar::placeholder {
+  font-family: Roboto, Arial;
+  font-size: 16px;
+}
+
+.search-button {
+  width: 60px;
+  height: 38px;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(194, 194, 194);
+  margin-left: -1px;
+  margin-right: 10px;
+}
+
+.search-icon {
+  margin-top: 4px;
+  height: 25px;
+}
+
+.voice-search-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(236, 236, 236);
+}
+
+.voice-search-icon {
+  height: 24px;
+  margin-top: 4px;
 }
 
 .right-section {
-  background-color: lightblue;
-  width: 200px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  flex-shrink: 0; /* this prevents the 'right-section' from shrinking when resizing the page */
+}
+
+.upload-icon {
+  height: 24px;
+}
+
+.youtube-apps-icon {
+  height: 24px;
+}
+
+.notifications-icon {
+  height: 24px;
+}
+
+.current-user-picture {
+  height: 32px;
+  border-radius: 50%;
 }

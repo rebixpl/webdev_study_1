@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoDodo</title>
+  </head>
+  <body>
+    <input id="todo-title" type="text" />
+    <input id="date-picker" type="date" name="" id="" />
+    <button onclick="addTodo()">Add todo</button>
+
+    <div id="todo-list"></div>
+
+    <script>
+      const todos = [
+        {
+          title: "Get groceries",
+          dueDate: "2022-10-04",
+        },
+        {
+          title: "Wash the dishes",
+          dueDate: "2022-02-03",
+        },
+        {
+          title: "Do the laundry",
+          dueDate: "2022-03-01",
+        },
+        {
+          title: "Make dinner",
+          dueDate: "2022-06-21",
+        },
+      ];
+
+      render();
+
+      function addTodo() {
+        const textbox = document.getElementById("todo-title");
+        const title = textbox.value;
+
+        const datePicker = document.getElementById("date-picker");
+        const dueDate = datePicker.value;
+
+        todos.push({
+          title: title,
+          dueDate: dueDate,
+        });
+        render();
+      }
+
+      function render() {
+        const todoList = document.getElementById("todo-list");
+        // reset list to be empty
+        todoList.innerHTML = "";
+
+        todos.forEach(function (todo) {
+          const element = document.createElement("div");
+          element.innerText = todo.title;
+          todoList.appendChild(element);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,3 +1,5 @@
+// MVC Model View(Render) Controller
+// ----- Model -----
 let todos = [
   {
     title: "Get groceries",
@@ -23,13 +25,8 @@ let todos = [
 
 render();
 
-function addTodo() {
-  const textbox = document.getElementById("todo-title");
-  const title = textbox.value;
-
-  const datePicker = document.getElementById("date-picker");
-  const dueDate = datePicker.value;
-
+// Created a todo
+function createTodo(title, dueDate) {
   const id = "" + new Date().getTime(); // it won't work without 'new' keyword
 
   todos.push({
@@ -37,13 +34,10 @@ function addTodo() {
     dueDate: dueDate,
     id: id,
   });
-  render();
 }
 
-function deleteTodo(event) {
-  const deleteButton = event.target; // button the user has clicked
-  const idToDelete = deleteButton.id;
-
+// Deletes a todo
+function removeTodo(idToDelete) {
   // filter() method creates a copy of original array, it doesn't modify the array itself
   todos = todos.filter(function (todo) {
     // If the id of this todo matches idToDelete, return false
@@ -54,10 +48,33 @@ function deleteTodo(event) {
       return true;
     }
   });
+}
+
+function saveTodos() {}
+
+// ----- Controller -----
+function addTodo() {
+  const textbox = document.getElementById("todo-title");
+  const title = textbox.value;
+
+  const datePicker = document.getElementById("date-picker");
+  const dueDate = datePicker.value;
+
+  createTodo(title, dueDate);
 
   render();
 }
 
+function deleteTodo(event) {
+  const deleteButton = event.target; // button the user has clicked
+  const idToDelete = deleteButton.id;
+
+  removeTodo(idToDelete);
+
+  render();
+}
+
+// ----- View(Render) -----
 function render() {
   // DOM (Document Object Model) => You can grab stuff from HTML
   // and it gets converted into a JavaScript Object

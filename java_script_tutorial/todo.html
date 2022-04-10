@@ -4,12 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/java_script_tutorial/style.css" />
     <title>TodoDodo</title>
   </head>
   <body>
-    <input id="todo-title" type="text" />
-    <input id="date-picker" type="date" name="" id="" />
-    <button onclick="addTodo()">Add todo</button>
+    <header class="header">
+      <div>
+        <input
+          class="todo-input-field"
+          id="todo-title"
+          type="text"
+          placeholder="Enter your todo"
+        />
+        <input
+          class="todo-date-picker"
+          id="date-picker"
+          type="date"
+          name=""
+          id=""
+        />
+      </div>
+      <button class="button" onclick="addTodo()">Add todo</button>
+    </header>
 
     <div id="todo-list"></div>
 

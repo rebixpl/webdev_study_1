@@ -1,0 +1,61 @@
+body {
+  margin: 20px;
+  padding: 0px;
+  background-color: black;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.todo-input-field,
+.todo-date-picker {
+  position: static;
+  height: 34px;
+  padding-left: 10px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 2px;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.button {
+  background-color: white;
+  border-color: rgb(41, 118, 211);
+  border-style: solid;
+  border-width: 1px;
+  color: rgb(41, 118, 211);
+  /* height: 36px;
+    width: 62px; */
+  padding: 9px 16px; /* 9px vertical, because border is 1px */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  transition: color 0.15s;
+  margin-left: 20px;
+}
+
+.button:hover {
+  background-color: rgb(41, 118, 211);
+  color: white;
+}
+
+.button:active {
+  opacity: 0.7;
+}
+
+.todoText {
+  color: white;
+  font-weight: 500;
+  border: 2px solid white;
+  margin: 20px 0px;
+  padding: 10px;
+}

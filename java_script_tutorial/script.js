@@ -1,27 +1,37 @@
 // MVC Model View(Render) Controller
 // ----- Model -----
-let todos = [
-  {
-    title: "Get groceries",
-    dueDate: "2022-10-04",
-    id: "id1",
-  },
-  {
-    title: "Wash the dishes",
-    dueDate: "2022-02-03",
-    id: "id2",
-  },
-  {
-    title: "Do the laundry",
-    dueDate: "2022-03-01",
-    id: "id3",
-  },
-  {
-    title: "Make dinner",
-    dueDate: "2022-06-21",
-    id: "id4",
-  },
-];
+// If localstorage has a todos array, then use it, otwerwise use default array
+let todos;
+
+const savedTodos = JSON.parse(localStorage.getItem("todos"));
+
+// Check is saveTodos is an array
+if (Array.isArray(savedTodos)) {
+  todos = savedTodos;
+} else {
+  todos = [
+    {
+      title: "Get groceries",
+      dueDate: "2022-10-04",
+      id: "id1",
+    },
+    {
+      title: "Wash the dishes",
+      dueDate: "2022-02-03",
+      id: "id2",
+    },
+    {
+      title: "Do the laundry",
+      dueDate: "2022-03-01",
+      id: "id3",
+    },
+    {
+      title: "Make dinner",
+      dueDate: "2022-06-21",
+      id: "id4",
+    },
+  ];
+}
 
 render();
 
@@ -34,6 +44,8 @@ function createTodo(title, dueDate) {
     dueDate: dueDate,
     id: id,
   });
+
+  saveTodos();
 }
 
 // Deletes a todo
@@ -48,9 +60,13 @@ function removeTodo(idToDelete) {
       return true;
     }
   });
+
+  saveTodos();
 }
 
-function saveTodos() {}
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
 
 // ----- Controller -----
 function addTodo() {
@@ -85,12 +101,13 @@ function render() {
   todos.forEach(function (todo) {
     const element = document.createElement("div");
     element.innerText = todo.title + " " + todo.dueDate;
+    element.classList.add("todoText");
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "Delete";
-    deleteButton.style = "margin-left: 12px";
     deleteButton.onclick = deleteTodo;
     deleteButton.id = todo.id;
+    deleteButton.classList.add("button");
     element.appendChild(deleteButton);
 
     todoList.appendChild(element);

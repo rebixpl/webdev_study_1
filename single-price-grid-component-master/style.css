@@ -14,6 +14,7 @@ body {
   font-family: "Karla", sans-serif;
   background-color: var(--ltgray);
   color: var(--grayblue);
+  padding: var(--paddingX);
 }
 
 :root {
@@ -23,13 +24,37 @@ body {
   --yellow: hsl(71, 73%, 54%);
   --ltgray: hsl(204, 43%, 93%);
   --grayblue: hsl(218, 22%, 67%);
+
+  --paddingX: 1.8rem;
+  --paddingY: 1.5rem;
 }
 
 a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+  margin-top: 0;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
 .price {
+  border-radius: 0.5rem;
+  overflow: hidden;
+
   @media only screen and (min-width: 62.5em) {
     /* Styles for desktop ( with grid ) will activate only if min-width: 62.5 em
        it comes frome dividing 1000px by 16px(default font size) */
@@ -37,29 +62,34 @@ a {
   }
 }
 
+.price > * {
+  padding: var(--paddingX) var(--paddingY);
+}
+
 .community {
   background-color: var(--white);
 }
 
-.community h2 {
-  color: var(--cyan);
-  font-weight: bold;
+.subscription {
+  /* background-color: var(--cyan); */
 }
 
-.community h3 {
+.why {
+  /* background-color: var(--ltcyan); */
+}
+
+.community h2 {
+  color: var(--cyan);
+}
+
+.community .subtitle {
+  font-size: 1rem;
   color: var(--yellow);
   font-weight: bold;
 }
 
 .community p {
   font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-.subscription {
-  background-color: var(--cyan);
-}
-
-.why {
-  background-color: var(--ltcyan);
+  line-height: 1.75;
+  margin-bottom: 0;
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      li.red ~ li {
+        /* All elements after red class */
+        background-color: aquamarine;
+      }
+
+      li.blue + li {
+        /* The next element after blue class */
+        background-color: brown;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>This is a div</div>
+    <span>This is a span</span>
+    <ul>
+      <li>Item 1</li>
+      <li class="red">Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li class="blue">Item 5</li>
+      <li>Item 6</li>
+    </ul>
+  </body>
+</html>

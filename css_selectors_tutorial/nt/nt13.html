@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      [class^="top"] {
-        background: blueviolet;
+      .main::before {
+        content: "<<";
+        color: blue;
+        padding-right: 1rem;
+      }
+      .main::after {
+        content: ">>";
+        color: red;
+        padding-left: 1rem;
       }
     </style>
   </head>
   <body>
-    <h1 class="top-header">Welcome</h1>
-    <p class="top-text">Hello world!</p>
-    <p class="topcontent">Are you learning CSS?</p>
+    <div class="main">Hello World</div>
   </body>
 </html>

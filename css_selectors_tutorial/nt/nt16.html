@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      [class^="top"] {
-        background: blueviolet;
+      input[type="text"]:disabled {
+        background: darkmagenta;
       }
     </style>
   </head>
   <body>
-    <h1 class="top-header">Welcome</h1>
-    <p class="top-text">Hello world!</p>
-    <p class="topcontent">Are you learning CSS?</p>
+    <input type="text" placeholder="Name" disabled />
+    <input type="text" placeholder="Address" disabled />
+    <input type="button" value="OK" disabled />
+    <input type="text" placeholder="Zip Code" />
   </body>
 </html>

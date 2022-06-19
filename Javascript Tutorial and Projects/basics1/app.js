@@ -29,9 +29,46 @@ const website = "youtube";
 const url = "https://www." + website + ".com";
 console.log(url);
 
+// some numbers
 const num = 34;
 const num2 = 2.324;
 
 const addSum = num + num2;
 
 console.log(addSum);
+
+let number = 34;
+number += 6;
+number--;
+number++;
+console.log(number % 3);
+console.log(number);
+
+// Implicit type conversion
+let number3 = "10";
+let number4 = "23";
+
+let result = number3 - number4; // -, *, /, etc but not +
+console.log(result); // -13
+
+number3 = "10";
+number4 = "23";
+
+result = number3 + number4; // +
+console.log(result); // "1023" !!!!!
+
+// Data Types
+// Primitive - String, Number, Boolean, Null, Undefined, Symbol
+// Object - Arrays, Functions, Objects
+
+// bool
+let value1 = true;
+console.log(typeof value1); // boolean
+
+// null
+const result2 = null;
+console.log(typeof result2); // object (this is bug in js lol it should return null)
+
+// undefined
+let variable3;
+console.log(typeof variable3); // undefined

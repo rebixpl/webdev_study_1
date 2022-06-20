@@ -193,3 +193,31 @@ switch (dice) {
   default:
     console.log("you did not roll the dice");
 }
+
+// WHILE LOOP
+let amount = 10;
+
+while (amount > 0) {
+  console.log("amount = " + amount);
+  amount--;
+}
+
+// DO WHILE LOOP
+let money = 0;
+do {
+  console.log("money = " + money);
+  money++;
+} while (money < 10);
+
+// do while will run at least once
+money = 120;
+do {
+  console.log("money = " + money);
+  money++;
+} while (money < 10);
+
+// for loops
+// let i;
+for (let i = 0; i <= 10; i++) {
+  console.log("for loop number i = " + i);
+}

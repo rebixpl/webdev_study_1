@@ -119,3 +119,53 @@ let num = 20 + null; // 20 + 0
 console.log(num); // 20
 let num2 = 20 + undefined;
 console.log(num2); // NaN (not a number error)
+
+// Truthy and Falsy
+// "" - false
+// "fds" - true
+// `` - false
+// `das` - true
+// 1 - true
+// 0 - false
+// -0 - false
+// -1 - true
+// NaN - false
+// null - false
+// undefined - false
+
+let xddd = undefined;
+
+if (xddd) {
+  console.log(`that's true`);
+}
+
+// Ternary Operator
+// condition ? (runs if true) : (runs if false)
+const value2 = 1 < 0;
+
+value2 ? console.log(`true`) : console.log(`false`);
+
+//  Callback Functions, Higher Order Functions
+
+// Callback function is the one that we are passing
+// to a High Order Function
+function morning(name) {
+  return `Good morning ${name.toUpperCase()}`;
+}
+
+function afternoon(name) {
+  return `Good afternoon ${name.repeat(3)}`;
+}
+
+// cb - callback function, you can decide when you
+// invoke it in code
+// High Order Function is that one that accepts a function
+function greet(name, cb) {
+  const myName = "Waldemar";
+  console.log(`${cb(name)}, my name is ${myName}`);
+}
+
+// Callback function is the one that we are passing
+// to a High Order Function
+greet("bobo", morning);
+greet("peter", afternoon);

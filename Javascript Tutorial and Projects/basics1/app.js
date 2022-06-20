@@ -153,3 +153,43 @@ console.log(person.name);
 console.log(person.siblings[2]);
 person.greeting(); // Invoking method
 person.greeting2(); // Invoking method
+
+// CONDITIONAL STATEMENTS
+// >, <, >=, <=, ==, ===, !=, !===
+
+const value2 = false;
+
+if (!value2) {
+  console.log("value is not true");
+}
+
+// == checks only value type
+// === check value AND type
+
+const numb1 = 6;
+const numb2 = "6";
+
+const val1 = numb1 == numb2; // value is the same
+const val2 = numb1 === numb2; // type is different
+
+console.log("val1 = " + val1); // true
+console.log("val2 = " + val2); // false
+
+// LOGICAL OPERATORS
+// (|| - OR), (&& - AND),
+
+// SWITCH STATEMENTS
+const dice = 1;
+switch (dice) {
+  case 1:
+    console.log("you got one");
+    break;
+  case 2:
+    console.log("you got two");
+    break;
+  case 3:
+    console.log("you got three");
+    break;
+  default:
+    console.log("you did not roll the dice");
+}

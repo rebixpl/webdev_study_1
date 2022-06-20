@@ -169,3 +169,56 @@ function greet(name, cb) {
 // to a High Order Function
 greet("bobo", morning);
 greet("peter", afternoon);
+
+///// Array iterators
+// forEach, map, filter, find, reduce
+const people = [
+  { name: "bob", age: 20, position: "developer" },
+  { name: "peter", age: 25, position: "designer" },
+  { name: "siusian", age: 30, position: "the boss" },
+];
+
+// forEach
+// does not return a new array
+people.forEach((person) => console.log(person.position.toUpperCase()));
+
+// map
+// does return a new array
+// does not change size of original array
+// uses values from original array when making a new one
+const ages = people.map((person) => person.age);
+console.log(ages); // (3) [20, 25, 30]
+
+const newPeople = people.map(function (person) {
+  return {
+    firstname: person.name.toUpperCase(),
+    oldAge: person.age,
+    newAge: person.age + 20,
+    position: person.position,
+  };
+});
+console.log(newPeople);
+
+const names3 = people.map(function (person) {
+  return `<h1>${person.name}</h1>`;
+});
+console.log(names3);
+
+document.body.innerHTML = names3.join("");
+
+// filter
+// does return a new array
+// can manipulate the size of new array
+// returns based on condition
+const people3 = [
+  { name: "bob", age: 20, position: "developer" },
+  { name: "peter", age: 25, position: "designer" },
+  { name: "siusian", age: 30, position: "the boss" },
+  { name: "hanna", age: 35, position: "the boss" },
+];
+
+const youngPeople = people.filter(function (person) {
+  return person.age <= 25;
+});
+
+console.log(youngPeople); // returns an array with 2 items (bob and peter)

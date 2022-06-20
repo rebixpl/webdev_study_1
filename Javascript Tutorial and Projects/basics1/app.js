@@ -101,3 +101,55 @@ function greet(name) {
 
 greet("bob");
 greet("Siusian");
+
+// JS Functions RETURN
+// All function by default are going to return undefined
+function calculate(value) {
+  const newValue = value * 2.54;
+  console.log("Value in cm => " + newValue + " cm");
+  return newValue;
+}
+
+const width = calculate(100);
+const height = calculate(80);
+
+const dimensions = [width, height];
+console.log(dimensions);
+
+// FUNCTION EXPRESSIONS
+
+// anonymous function
+const add = function (num1, num2) {
+  return num1 + num2;
+};
+
+let newValue = add(3, 6);
+console.log(newValue); // 9
+
+// Arrow Function
+const multiply = (num1, num2) => num1 * num2;
+newValue = multiply(3, 6);
+console.log(newValue); // 18
+
+// Objects
+const person = {
+  name: "John",
+  lastName: "Nigghul",
+  age: 40,
+  education: false,
+  married: true,
+  siblings: ["anna", "siusiaan", "ahmed"],
+  greeting: function () {
+    console.log("Hello, I'm John");
+  },
+  // From ES6 we can also use this shorthand to set up
+  // our methods
+  greeting2() {
+    console.log("Hello, I'm John");
+  },
+};
+
+console.log(person.name);
+console.log(person.siblings[2]);
+person.greeting(); // Invoking method
+person.greeting2(); // Invoking method

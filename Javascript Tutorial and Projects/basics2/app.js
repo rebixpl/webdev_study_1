@@ -59,3 +59,63 @@ const specificNames = allNames.splice(2, 2);
 // notice that specificNames were removed from original allNames array
 console.log(`specificNames : ${specificNames}`);
 console.log(`allNames : ${allNames}`);
+
+// Exercise - Full name
+const names2 = ["anna", "sussy", "bob", "john"];
+const lastName = "Baryła";
+let newArray = [];
+
+for (let i = 0; i <= names2.length - 1; i++) {
+  newArray.push(`${names2[i]} ${lastName}`);
+}
+
+console.log(newArray); // ['anna Baryła', 'sussy Baryła', 'bob Baryła', 'john Baryła']
+
+// Exercise - Calculate total
+const gas = [20, 40, 100, 30];
+const food = [10, 40, 50];
+
+function calculateTotal(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
+}
+
+const gasTotal = calculateTotal(gas);
+const foodTotal = calculateTotal(food);
+const randomTotal = calculateTotal([32, 543, 766, 34, 2.43]);
+
+console.log({
+  gas: gasTotal,
+  food: foodTotal,
+  random: randomTotal,
+});
+
+// Reference vs Value
+let person = { name: "bob" };
+let person2 = person;
+person2.name = "adolf";
+console.log(`person.name: ${person.name}`); // adolf
+console.log(`person2.name: ${person2.name}`); // adolf
+
+// copy object with spread operator ...
+let person3 = { name: "bob" };
+let person4 = { ...person3 }; // don't get me a reference to person3, just copy the data with ...
+person4.name = "adolf";
+console.log(`person3.name: ${person3.name}`); // bob
+console.log(`person4.name: ${person2.name}`); // adolf
+
+// Null and Undefined
+// undefined - javascript can not find value for this
+// variable without value
+// missing function arguments
+// missing object properties
+
+// null - developer sets the value
+
+let num = 20 + null; // 20 + 0
+console.log(num); // 20
+let num2 = 20 + undefined;
+console.log(num2); // NaN (not a number error)

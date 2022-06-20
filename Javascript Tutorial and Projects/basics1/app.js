@@ -72,3 +72,32 @@ console.log(typeof result2); // object (this is bug in js lol it should return n
 // undefined
 let variable3;
 console.log(typeof variable3); // undefined
+
+// ARRAYS
+const friends = ["john", 2, "pussy", "sussy", 3.54, undefined];
+console.log("Type: " + typeof friends + " | friends: " + friends);
+console.log(friends[3]);
+console.log(friends);
+console.log(friends.length); // 6
+
+let bestFriend = friends[0];
+friends[2] = bestFriend;
+console.log(friends[2]); // john
+
+// Functions - declare, invoke
+// declaration
+function hello() {
+  console.log("Hello There!");
+}
+
+// invocation
+hello();
+
+// Function - params, arguments
+// with parameters we don't have to use variable types like var, let, const
+function greet(name) {
+  console.log("Hello " + name + "!");
+}
+
+greet("bob");
+greet("Siusian");

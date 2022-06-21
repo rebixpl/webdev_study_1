@@ -289,3 +289,48 @@ console.log(result8); // 1
 
 const result9 = Math.floor(Math.random() * 10 + 1);
 console.log(result9); // 10
+
+// Date Object
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const date = new Date();
+// const date = new Date("11/19/2004");
+const month = date.getMonth();
+console.log(month); // 5
+console.log(months[month]); // June
+
+const day = date.getDay();
+console.log(day); // 2
+console.log(days[day]); // Tuesday
+
+console.log(date.getFullYear()); // 2022
+
+const sentence2 = `${days[day]}, ${date.getDate()} ${months[month]}
+${date.getFullYear()}`;
+
+console.log(sentence2); // Tuesday, 21 June 2022
+
+document.body.innerHTML = sentence2;

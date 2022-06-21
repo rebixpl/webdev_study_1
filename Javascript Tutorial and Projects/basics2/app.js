@@ -334,3 +334,21 @@ ${date.getFullYear()}`;
 console.log(sentence2); // Tuesday, 21 June 2022
 
 document.body.innerHTML = sentence2;
+
+// DOM - general concepts
+document.body.style.backgroundColor = "wheat";
+const element = document.getElementById("btn");
+document.querySelector("element");
+
+// window object
+console.log(window); // document object is here
+
+document.body.innerHTML += `<br><br><button id="btn">Click me</button>`;
+
+const btn = document.getElementById("btn");
+const nodeName = btn.nodeName;
+const css = btn.style;
+
+console.log(btn); // <button id="btn">Click me</button>
+console.log(nodeName); // BUTTON
+console.log(css); // CSSStyleDeclaration {accentColor: '', additiveSymbols: '', alignContent: '', alignItems: '', alignSelf: '', …}

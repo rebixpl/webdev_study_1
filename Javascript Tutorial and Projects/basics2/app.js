@@ -222,3 +222,70 @@ const youngPeople = people.filter(function (person) {
 });
 
 console.log(youngPeople); // returns an array with 2 items (bob and peter)
+
+// find
+// returns single instance (in this case object)
+// returns first match, if no match undefined
+// great for getting unique value
+const people4 = [
+  { name: "bob", age: 20, position: "developer", id: 1 },
+  { name: "peter", age: 25, position: "designer", id: 2 },
+  { name: "siusian", age: 30, position: "the boss", id: 3 },
+  { name: "hanna", age: 35, position: "the boss", id: 4 },
+];
+
+const person5 = people4.find(function (person) {
+  return person.id === 3;
+});
+
+console.log(person5); // {name: 'siusian', age: 30, position: 'the boss', id: 3}
+
+// reduce
+// iterates, callback function
+// reduces to a single value - number, array, object
+// 1 parameter ('acc') - total of all calculations
+// 2 parameter ('curr') - current iteration/value
+const people5 = [
+  { name: "bob", age: 20, position: "developer", id: 1, salary: 200 },
+  { name: "peter", age: 25, position: "designer", id: 2, salary: 300 },
+  { name: "siusian", age: 30, position: "the boss", id: 3, salary: 500 },
+  { name: "hanna", age: 35, position: "the boss", id: 4, salary: 500 },
+];
+
+const total = people5.reduce(function (acc, curr) {
+  console.log(`total: ${acc}`);
+  console.log(`current money: ${curr.salary}`);
+  acc += curr.salary;
+  return acc;
+}, 0);
+
+console.log(total);
+
+// Math Object
+const number2 = 3.54376;
+const result = Math.floor(number2);
+console.log(result); // 3
+
+const result2 = Math.ceil(number2);
+console.log(result2); // 4
+
+const result3 = Math.sqrt(25);
+console.log(result3); // 5
+
+const result4 = Math.PI;
+console.log(result4); // 3.141592653589793
+
+const result5 = Math.min(1, 5, 6, 2, 8, 5, 2, 8, 34, 63, 13, 7, 67, 34, 3);
+const result6 = Math.max(1, 5, 6, 2, 8, 5, 2, 8, 34, 63, 13, 7, 67, 34, 3);
+console.log(result5); // 1
+console.log(result6); // 67
+
+const result7 = Math.random();
+console.log(result7); // 0.02138528679250551
+
+// result8 and result9 work the same way ( they generate random numbers from 1 to 10)
+const result8 = Math.ceil(Math.random() * 10);
+console.log(result8); // 1
+
+const result9 = Math.floor(Math.random() * 10 + 1);
+console.log(result9); // 10

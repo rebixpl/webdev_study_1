@@ -15,6 +15,8 @@ let editID = "";
 // ****** EVENT LISTENERS **********
 // submit form
 form.addEventListener("submit", addItem);
+// clear items
+clearBtn.addEventListener("click", clearItems);
 
 // ****** FUNCTIONS **********
 /**
@@ -81,9 +83,33 @@ function displayAlert(text, action) {
   }, 1000);
 }
 
+// delete items from container list
+function clearItems() {
+  const items = document.querySelectorAll(".grocery-item");
+
+  if (items.length > 0) {
+    items.forEach(function (item) {
+      list.removeChild(item);
+    });
+    // hide empty container
+    container.classList.remove("show-container");
+    displayAlert("list is now empty", "danger");
+    setBackToDefault();
+    // remove items from local storage
+    // localStorage.removeItem('list');
+  }
+}
+
+// edit function
+
+// delete function
+
 // set back to default
 function setBackToDefault() {
-  console.log("setBackToDefault");
+  grocery.value = "";
+  editFlag = false;
+  editID = "";
+  submitBtn.textContent("submit");
 }
 
 // ****** LOCAL STORAGE **********

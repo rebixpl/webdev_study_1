@@ -31,13 +31,69 @@ function addItem(e) {
   // !value === (value !== "")
   // !editFlag === false
   if (value && !editFlag) {
-    console.log("add item to the list");
+    // add item to the list
+    const element = document.createElement("article");
+    element.classList.add("grocery-item");
+    // add id
+    const attr = document.createAttribute("data-id");
+    attr.value = id;
+    element.setAttributeNode(attr);
+    element.innerHTML = `<p class="title">${value}</p>
+    <div class="btn-container">
+      <button class="edit-btn" type="button">
+        <i class="fas fa-edit"></i></button
+      ><button class="delete-btn" type="button">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>`;
+    // append child
+    list.appendChild(element);
+    // display alert
+    displayAlert("item added to the list", "success");
+    // show container
+    container.classList.add("show-container");
+    // add to local storage
+    addToLocalStorage(id, value);
+    // set back to default
+    setBackToDefault();
   } else if (value && editFlag) {
     console.log("editing");
   } else {
-    console.log("empty value");
+    // elmpty value
+    displayAlert("please enter a valid value", "danger");
   }
 }
+
+// display alert
+/**
+ *
+ * @param {String} text
+ * @param {String} action
+ */
+function displayAlert(text, action) {
+  alert.textContent = text;
+  alert.classList.add(`alert-${action}`);
+
+  // remove alert after 1000 ms
+  setTimeout(() => {
+    alert.textContent = "";
+    alert.classList.remove(`alert-${action}`);
+  }, 1000);
+}
+
+// set back to default
+function setBackToDefault() {
+  console.log("setBackToDefault");
+}
+
 // ****** LOCAL STORAGE **********
+/**
+ *
+ * @param {String} id
+ * @param {String} value
+ */
+function addToLocalStorage(id, value) {
+  console.log("added to local storage");
+}
 
 // ****** SETUP ITEMS **********

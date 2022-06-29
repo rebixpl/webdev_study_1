@@ -48,12 +48,16 @@ function addItem(e) {
         <i class="fas fa-trash"></i>
       </button>
     </div>`;
+    const deleteBtn = element.querySelector(".delete-btn");
+    const editBtn = element.querySelector(".edit-btn");
+    deleteBtn.addEventListener("click", deleteItem);
+    editBtn.addEventListener("click", editItem);
     // append child
     list.appendChild(element);
-    // display alert
-    displayAlert("item added to the list", "success");
     // show container
     container.classList.add("show-container");
+    // display alert
+    displayAlert("item added to the list", "success");
     // add to local storage
     addToLocalStorage(id, value);
     // set back to default
@@ -101,8 +105,26 @@ function clearItems() {
 }
 
 // edit function
+function editItem() {
+  console.log("edited item");
+}
 
 // delete function
+/**
+ *
+ * @param {Event} e
+ */
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement; // gorcery item
+  const id = element.dataset.id;
+  list.removeChild(element);
+  if (list.children.length === 0) {
+    container.classList.remove("show-container");
+  }
+  displayAlert("item has been removed", "danger");
+  setBackToDefault();
+  removeFromLocalStorage(id);
+}
 
 // set back to default
 function setBackToDefault() {
@@ -118,8 +140,12 @@ function setBackToDefault() {
  * @param {String} id
  * @param {String} value
  */
-function addToLocalStorage(id, value) {
-  console.log("added to local storage");
-}
+function addToLocalStorage(id, value) {}
+
+/**
+ *
+ * @param {String} id
+ */
+function removeFromLocalStorage(id) {}
 
 // ****** SETUP ITEMS **********

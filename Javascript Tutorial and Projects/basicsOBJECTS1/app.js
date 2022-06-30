@@ -33,3 +33,42 @@ console.log(value); // will be true if we successfully deleted siblings property
 // delete person.siblings;
 console.log(person.siblings);
 console.log(person);
+
+/////----------------------------
+
+const age = 60;
+let random = "random-value";
+
+const person2 = {
+  name: "john",
+  // age: age, // with ES6 we can omit the name if property name matches the value name
+  age, // like this // ES6
+  married: true,
+  siblings: ["anna", "peter"],
+  greet: function (name) {
+    console.log(`Hello, i am ${name}`);
+  },
+  sayHello(name) {
+    console.log(`Hello, i am ${name}`);
+  },
+  job: {
+    title: "developer",
+    company: {
+      name: "vaticanCorpo",
+      address: "21/37 pope street",
+    },
+  },
+  "random-value": "random",
+  42: 42,
+  "key with spaces": "hello world",
+};
+
+// nested objects
+console.log(person2.job.company.name); // vaticanCorpo
+// dot notation vs bracket notation
+console.log(person2[42]);
+console.log(person2["random-value"]);
+console.log(person2[random]); // same as person2["random-value"]
+console.log(person2["key with spaces"]);
+
+// set variable as a property value

@@ -90,3 +90,29 @@ function Person(firstName, lastName) {
 // new - creates new object, points to it, omit return
 // if we wouldn't use new, 'this' in Person() function will return window object
 const john4 = new Person("john", "fac");
+
+// constructor property
+// All Objects in JS have access to constructor property that returns a constructor
+// function that created it.
+// built in constructor functions
+// arrays and functions are objects in JS
+const john5 = new Person("john", "fac");
+console.log("--------------");
+console.log(john5.constructor); /*  ƒ Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.fullName = function () {
+      console.log(
+        `My full name is ${this.firstName} ${this.lastName}… */
+
+const bob = {};
+console.log(bob.constructor); // ƒ Object() { [native code] }
+
+const list = [];
+console.log(list.constructor); // ƒ Array() { [native code] }
+
+const sayHi = function () {};
+console.log(sayHi.constructor); // ƒ Function() { [native code] }
+
+const sussy = new john5.constructor("sussy", "carpenter");
+sussy.fullName();

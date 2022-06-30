@@ -51,3 +51,42 @@ btn2.addEventListener("click", function () {
   // on the left side of the . there will be window
   showThis(); // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
 });
+
+/////////-----------------------------------
+// Blue Print
+// Factory Functions and Constructor Functions
+// Factory Functions
+function createPerson(firstName, lastName) {
+  return {
+    firstName,
+    lastName,
+    fullName() {
+      console.log(
+        `My full name is ${this.firstName} ${this.lastName} and I love JS`
+      );
+    },
+  };
+}
+
+const john3 = createPerson("john", "fac");
+john3.fullName();
+const siusian = createPerson("siusian", "apple");
+siusian.fullName();
+
+// Constructor Functions
+
+// with constructors we us capital letter  to indicate to other dev eloper, that this function is special
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.fullName = function () {
+    console.log(
+      `My full name is ${this.firstName} ${this.lastName} and I love JS`
+    );
+  };
+  console.log(this);
+}
+
+// new - creates new object, points to it, omit return
+// if we wouldn't use new, 'this' in Person() function will return window object
+const john4 = new Person("john", "fac");

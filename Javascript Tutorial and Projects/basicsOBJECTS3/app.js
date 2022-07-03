@@ -1,37 +1,22 @@
-/* Prototypal Inheritance Model 
-JS uses prototypal inheritance model. That means that every constructor
-function/class has a prototype property that is shared by every instance
-of the constructor/class. So any properties and methods or prototype can 
-be accessed by every instance. Prototype property returns an object
+/* ES6 Classes - Syntactic Sugar
+Prototypal Inheritance
 */
 
-/* Property Lookup
-if child does not have ask parent
-Everything in JS is an Object */
+class Account {
+  constructor(name, initialBalance) {
+    this.name = name;
+    this.balance = initialBalance;
+  }
+  // the properties are gonna be on every instance
+  bank = "SIWYBANK";
 
-// constructor
-function Account(name, initialBalance) {
-  this.name = name;
-  this.balance = initialBalance;
+  // methods are gonna be on a class prototype
+  deposit(amount) {
+    this.balance += amount;
+    console.log(`Hello ${this.name}, your balance is ${this.balance}`);
+  }
 }
 
-const john = new Account("john", 200);
-const bob = new Account("bob", 0);
-
-console.log(Account.prototype); /* Object
-constructor: ƒ Account(name, initialBalance)
-[[Prototype]]: Object
-*/
-
-// In case we have many objects like thousands it makes sense to create a
-// prototype, instead of copying every time the same functionality in a constructor
-Account.prototype.bank = "GRAYBANK";
-Account.prototype.deposit = function (amount) {
-  this.balance += amount;
-  console.log(`Hello ${this.name}, your balance is ${this.balance}`);
-};
-
-console.log(john.bank);
-
-john.deposit(300); // Hello john, your balance is 500
-console.log(john.balance); // 500
+const john = new Account("john", 0);
+console.log(john); // Account {name: 'john', balance: 0}
+john.deposit(500); // Hello john, your balance is 500

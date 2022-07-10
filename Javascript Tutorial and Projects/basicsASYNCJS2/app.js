@@ -5,43 +5,24 @@ const heading1 = document.querySelector(".one");
 const heading2 = document.querySelector(".two");
 const heading3 = document.querySelector(".three");
 const btn = document.querySelector(".btn");
-const container = document.querySelector(".img-container");
-const url = "https://source.unsplash.com/random";
 
 btn.addEventListener("click", () => {
-  loadImage(url)
-    .then((image) => container.appendChild(image))
+  addColor(1000, heading1, "red")
+    .then(() => addColor(2000, heading2, "green"))
+    .then(() => addColor(1000, heading3, "blue"))
     .catch((err) => console.log(err));
 });
 
-function loadImage(url) {
+function addColor(time, element, color) {
   return new Promise((resolve, reject) => {
-    let img = new Image();
-    img.addEventListener("load", () => {
-      resolve(img);
-    });
-    img.addEventListener("error", () => {
-      reject(new Error("Error loading image from: " + url));
-    });
-    img.src = url;
+    // if element does not exist we get a null
+    if (element) {
+      setTimeout(() => {
+        element.style.color = color;
+        resolve();
+      }, time);
+    } else {
+      reject(new Error(`Element ${element} does not exist`));
+    }
   });
 }
-
-// const promise = new Promise((resolve, reject) => {
-//   let value = true;
-//   if (value) {
-//     resolve(`value is true`); // this might be data from a server
-//   } else {
-//     reject(`there was an error, value is false`);
-//   }
-// });
-
-// console.log(promise); // Promise {<fulfilled>: 'value is true'}
-
-// promise
-//   .then((data) => {
-//     console.log(data); // value is true
-//   })
-//   .catch((err) => {
-//     console.log(err); // there was an error, value is false
-//   });

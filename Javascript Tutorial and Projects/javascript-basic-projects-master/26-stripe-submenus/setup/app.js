@@ -43,9 +43,39 @@ linkBtns.forEach((btn) => {
     const center = (tempButton.left + tempButton.right) / 2;
     const bottom = tempButton.bottom - 3;
 
-    submenu.style.left = `${center}px`;
-    submenu.style.top = `${bottom}px`;
+    const tempPage = sublinks.find(({ page }) => page === text);
+    if (tempPage) {
+      const { page, links } = tempPage;
+      submenu.style.left = `${center}px`;
+      submenu.style.top = `${bottom}px`;
+      submenu.classList.add("show");
 
-    submenu.classList.add("show");
+      let columns = "col-2";
+      if (links.length === 3) columns = "col-3";
+      if (links.length > 3) columns = "col-4";
+
+      submenu.innerHTML = `
+      <section>
+      <h4>${page}</h4>
+      <div class="submenu-center ${columns}">
+        ${links
+          .map((link) => {
+            return `<a href="${link.url}"><i class="${link.icon}"></i>${link.label}</a>`;
+          })
+          .join("")}
+      </div>
+      </section>
+      `;
+    }
   });
+});
+
+hero.addEventListener("mouseover", function () {
+  submenu.classList.remove("show");
+});
+
+nav.addEventListener("mouseover", function (e) {
+  if (!e.target.classList.contains("link-btn")) {
+    submenu.classList.remove("show");
+  }
 });

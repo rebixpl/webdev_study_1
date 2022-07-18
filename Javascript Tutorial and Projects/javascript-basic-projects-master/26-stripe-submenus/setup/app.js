@@ -17,3 +17,35 @@ toggleBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   sidebarWrapper.classList.remove("show");
 });
+
+// set sidebar
+
+sidebar.innerHTML = sublinks
+  .map((item) => {
+    const { links, page } = item;
+    return `<article>
+    <h4>${page}</h4>
+    <div class="sidebar-sublinks">
+${links
+  .map((link) => {
+    return `<a href="${link.url}"><i class="${link.icon}"></i>${link.label}</a>`;
+  })
+  .join("")}
+    </div> 
+    </article>`;
+  })
+  .join("");
+
+linkBtns.forEach((btn) => {
+  btn.addEventListener("mouseover", function (e) {
+    const text = e.currentTarget.textContent;
+    const tempButton = e.currentTarget.getBoundingClientRect();
+    const center = (tempButton.left + tempButton.right) / 2;
+    const bottom = tempButton.bottom - 3;
+
+    submenu.style.left = `${center}px`;
+    submenu.style.top = `${bottom}px`;
+
+    submenu.classList.add("show");
+  });
+});

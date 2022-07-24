@@ -14,7 +14,12 @@ const init = async () => {
   if (products) {
     // add products to the store
     setupStore(products);
-    console.log(store);
+    const featured = store.filter((product) => {
+      if (product.featured) {
+        return product;
+      }
+    });
+    display(featured, getElement(".featured-center"));
   }
 };
 

@@ -29,10 +29,46 @@ export const addToCart = (id) => {
   } else {
     // item is in the cart, update values
   }
+  // add one to the item count
+  displayCartItemCount();
+
+  // display cart totals
+  displayCartTotal();
+
+  //set cart in local storage
+  setStorageItem("cart", cart);
+
   // more stuff coming up
   openCart();
 };
 
+function displayCartItemCount() {
+  const amount = cart.reduce((acc, item) => acc + item.amount, 0);
+  cartItemCountDOM.textContent = amount;
+}
+
+function displayCartTotal() {
+  let total = cart.reduce((acc, item) => acc + item.price * item.amount, 0);
+  cartTotalDOM.textContent = `Total: ${formatPrice(total)}`;
+}
+
+function displayCartItemsDOM() {
+  cart.forEach((cartItem) => {
+    addToCartDOM(cartItem);
+  });
+}
+
+function setupCartFunctionality() {}
+
 // this init function will be called every time we import setupCart.js ( so on every page )
-const init = function () {};
+const init = function () {
+  // display amount of cart items
+  displayCartItemCount();
+  // display cart total
+  displayCartTotal();
+  // add all cart items to the DOM
+  displayCartItemsDOM();
+  // setup cart functionality
+  setupCartFunctionality();
+};
 init();

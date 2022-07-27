@@ -2,7 +2,7 @@ import { formatPrice } from "./utils.js";
 import { addToCart } from "./cart/setupCart.js";
 import addToCartDOM from "./cart/addToCartDOM.js";
 
-const display = (products, element) => {
+const display = (products, element, filters) => {
   // display products
   element.innerHTML = products
     .map((product) => {
@@ -26,6 +26,9 @@ const display = (products, element) => {
   </article>`;
     })
     .join("");
+
+  if (filters) return;
+  // if we are using filters, we don't want to add the event listeners (because we alreaddy did that the first time)
 
   element.addEventListener("click", function (e) {
     const parent = e.target.parentElement;

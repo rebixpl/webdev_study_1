@@ -14,13 +14,13 @@ const setupSearch = (store) => {
           return product;
         }
       });
-      display(newStore, productsContainer);
+      display(newStore, productsContainer, true);
 
       if (newStore.length < 1) {
         productsContainer.innerHTML = `<h3 class="filter-error"> sorry, no products matched your search</h3>`;
       }
     } else {
-      display(store, productsContainer);
+      display(store, productsContainer, true);
     }
   });
 };

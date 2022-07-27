@@ -28,6 +28,10 @@ export const addToCart = (id) => {
     addToCartDOM(product);
   } else {
     // item is in the cart, update values
+    const amount = increaseAmount(id);
+    const items = [...cartItemsDOM.querySelectorAll(".cart-item-amount")];
+    const newAmount = items.find((item) => item.dataset.id === id);
+    newAmount.textContent = amount;
   }
   // add one to the item count
   displayCartItemCount();
@@ -58,7 +62,40 @@ function displayCartItemsDOM() {
   });
 }
 
-function setupCartFunctionality() {}
+function increaseAmount(id) {
+  let newAmount;
+  cart = cart.map((cartItem) => {
+    if (cartItem.id === id) {
+      newAmount = cartItem.amount + 1;
+      cartItem = { ...cartItem, amount: newAmount };
+    }
+    return cartItem;
+  });
+  return newAmount;
+}
+
+function removeItem(id) {
+  cart = cart.filter((item) => item.id !== id);
+}
+
+function setupCartFunctionality() {
+  cartItemsDOM.addEventListener("click", function (e) {
+    const element = e.target;
+    const parent = e.target.parentElement;
+    const id = e.target.dataset.id;
+    const parentID = e.target.parentElement.dataset.id;
+
+    //remove
+    if (element.classList.contains("cart-item-remove-btn")) {
+      removeItem(id);
+      parent.parentElement.remove();
+    }
+
+    displayCartItemCount();
+    displayCartTotal();
+    setStorageItem("cart", cart);
+  });
+}
 
 // this init function will be called every time we import setupCart.js ( so on every page )
 const init = function () {

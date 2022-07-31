@@ -1,0 +1,21 @@
+h1 {
+  background-color: red;
+  /* display: inline; */
+  /* we can change the dimensions of element by using display: inline-block; */
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+}
+
+p {
+  background-color: blue;
+  /* display: none; // makes the element invisible */
+  display: inline;
+}
+
+span {
+  background-color: gray;
+  display: block;
+  width: 100px;
+  height: 100px;
+}

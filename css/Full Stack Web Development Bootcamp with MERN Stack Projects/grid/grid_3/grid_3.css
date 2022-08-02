@@ -1,0 +1,37 @@
+.container {
+  border: 1px solid blue;
+  padding: 10px;
+  display: grid;
+  /* grid-template: repeat(3, 100px) / repeat(3, 100px); */
+  /* auto-fill - works like media query */
+  /* auto-fill FILLS the row with as many columns as it can fit. So it creates implicit columns whenever a
+   new column can fit, because it’s trying to FILL the row with as many columns as it can. The newly 
+   added columns can and may be empty, but they will still occupy a designated space in the row. */
+
+  /* auto-fit FITS the CURRENTLY AVAILABLE columns into the space by expanding them so that they take 
+up any available space. The browser does that after FILLING that extra space with extra columns 
+(as with auto-fill ) and then collapsing the empty ones. */
+
+  /* minmax(min,max) - Defines a size range greater than or equal to min and less than or equal to max. */
+  grid-template: 1fr / repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  height: 700px;
+  /* align-content - vertical */
+  /* align-content: start; */
+  /* align-content: end; */
+  /* align-content: center; */
+  /* align-content: space-around; */
+  /* align-content: space-between; */
+  /* align-content: space-evenly; */
+
+  /* justify-content - horizontal */
+  /* justify-content: space-between; */
+  /* justify-content: space-evenly; */
+  /* justify-content: center; */
+  /* justify-content: end; */
+}
+
+.box {
+  background-color: orange;
+  border: 1px solid blue;
+}

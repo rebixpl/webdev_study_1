@@ -1,0 +1,33 @@
+.main-nav {
+  background-color: #e600e6;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 15px;
+  font-size: 2em;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: auto;
+}
+
+.flexContainer {
+  background-color: #8c1aff;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 15px;
+}
+
+.top-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit minmax(200px, 1fr));
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+}

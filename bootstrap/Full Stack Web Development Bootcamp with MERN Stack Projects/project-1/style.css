@@ -1,3 +1,9 @@
+/* General Settings */
+h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -48,3 +54,15 @@ h1 {
 .btn-online-secondary:hover {
   background-color: rgb(137, 137, 137);
 }
+
+/* Features Section */
+#feature i {
+  cursor: pointer;
+  color: rgb(137, 137, 137);
+}
+
+#feature h3:hover {
+  cursor: pointer;
+  color: rgb(137, 137, 137);
+}
+/* End Of Features Section */

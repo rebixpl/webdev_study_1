@@ -66,3 +66,17 @@ h1 {
   color: rgb(137, 137, 137);
 }
 /* End Of Features Section */
+
+/* Work Section */
+#work {
+  background: url(./images/pol_pl_Klapki-meskie-basenowe-Lano-KL-4-6143-6-Szare-3404_1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#work i {
+  color: rgb(137, 137, 137);
+}
+/* End of Work Section */

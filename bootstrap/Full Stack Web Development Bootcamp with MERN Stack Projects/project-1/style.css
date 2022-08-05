@@ -134,3 +134,43 @@ h1 {
   position: absolute;
 }
 /* Gallery section */
+
+/* Footer section */
+#footer {
+  background: #111;
+  width: 100%;
+}
+
+#footer .container {
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social {
+  margin: 20px 0;
+}
+
+.social a {
+  margin-right: 20px;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.content h2 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+#footer .container .content {
+  padding: 10px 20px;
+  color: white;
+}
+
+.second {
+  margin-right: 180px;
+}
+/* Footer section */

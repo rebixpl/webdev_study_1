@@ -80,3 +80,24 @@ h1 {
   color: rgb(137, 137, 137);
 }
 /* End of Work Section */
+
+/* History Section */
+#history {
+  background-color: #f0f0f5;
+}
+
+.historyArea {
+  background-color: white;
+  height: 450px;
+  margin-right: -50px;
+  padding: 30px;
+}
+
+.historyImage {
+  margin-top: 90px;
+  margin-left: -20px;
+  z-index: 50px;
+  position: relative;
+}
+
+/* History Section */

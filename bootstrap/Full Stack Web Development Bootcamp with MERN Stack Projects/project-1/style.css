@@ -101,3 +101,36 @@ h1 {
 }
 
 /* History Section */
+
+/* Gallery section */
+#gallery .col-md-3 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.imageContainer {
+  position: relative;
+  cursor: pointer;
+}
+
+.imgOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(26, 0, 26);
+  opacity: 0;
+}
+
+.imageContainer:hover .imgOverlay {
+  opacity: 0.5;
+}
+
+.imgText {
+  color: white;
+  position: absolute;
+}
+/* Gallery section */

@@ -15,3 +15,10 @@ var Human = {
 };
 
 Human.sayHi();
+
+const myLink = document.querySelector("a");
+let attribute = myLink.getAttribute("href");
+console.log(attribute); // https://siwydym.com
+myLink.setAttribute("href", "https://siwydym.com/about");
+attribute = myLink.getAttribute("href");
+console.log(attribute); // https://siwydym.com/about

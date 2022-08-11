@@ -2,12 +2,26 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 class App extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+
+    // the state object is the only one that is mutable
+    this.state = {
+      latitude: null,
+    };
+
     window.navigator.geolocation.getCurrentPosition(
-      (position) => console.log(position),
+      (position) => {
+        this.setState({
+          latitude: position.coords.latitude,
+        });
+      },
       (err) => console.log(err)
     );
-    return <div>you are in northern hemisphere</div>;
+  }
+
+  render() {
+    return <div>{this.state.latitude}</div>;
   }
 }
 

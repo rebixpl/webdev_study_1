@@ -8,6 +8,7 @@ class App extends React.Component {
     // the state object is the only one that is mutable
     this.state = {
       latitude: null,
+      errorMessage: "",
     };
 
     window.navigator.geolocation.getCurrentPosition(
@@ -16,12 +17,24 @@ class App extends React.Component {
           latitude: position.coords.latitude,
         });
       },
-      (err) => console.log(err)
+      (err) => {
+        this.setState({
+          errorMessage: err.message,
+        });
+      }
     );
   }
 
   render() {
-    return <div>{this.state.latitude}</div>;
+    if (this.state.errorMessage && !this.state.latitude) {
+      return <div> {this.state.errorMessage}</div>;
+    }
+
+    if (!this.state.errorMessage && this.state.latitude) {
+      return <div> {this.state.latitude}</div>;
+    } else {
+      return <div>Loading...</div>;
+    }
   }
 }
 

@@ -4,7 +4,7 @@ const SingleComment = (props) => {
   return (
     <div className="comment">
       <a href="/" className="avatar">
-        <img src={props.picture} alt="profile picture" />
+        <img src={props.picture} alt="profile" />
       </a>
       <div className="content">
         <a href="/" className="author">

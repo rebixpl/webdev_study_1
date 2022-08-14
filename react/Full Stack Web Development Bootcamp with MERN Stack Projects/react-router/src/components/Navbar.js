@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,13 +8,13 @@ const Navbar = () => {
         <a className="ui teal inverted segment">Gloria</a>
         <div className="ui right floated header">
           <button className="ui button">
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </button>
           <button className="ui button">
-            <Link to="/about">About</Link>
+            <NavLink to="/about">About</NavLink>
           </button>
           <button className="ui button">
-            <Link to="/contact">Contact</Link>
+            <NavLink to="/contact">Contact</NavLink>
           </button>
         </div>
       </nav>

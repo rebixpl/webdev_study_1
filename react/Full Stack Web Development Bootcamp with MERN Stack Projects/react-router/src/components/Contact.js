@@ -15,7 +15,7 @@ const Contact = () => {
         className="ui raised very padded text container segment"
         style={{ marginTop: "80px" }}
       >
-        <Link to="/card/Baryla" className="ui header">
+        <Link to="/Baryla" className="ui header">
           Baryla
         </Link>
         <p>
@@ -27,7 +27,7 @@ const Contact = () => {
         className="ui raised very padded text container segment"
         style={{ marginTop: "80px" }}
       >
-        <Link to="/card/chuj" className="ui header">
+        <Link to="/chuj" className="ui header">
           chuj
         </Link>
         <p>

@@ -4,7 +4,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav>
-        <h2 className="ui centered header">Adam Nipplesucker</h2>
+        <h2 className="ui centered header">Adam Nipplesucker's TODO App</h2>
         <div className="ui three buttons">
           <button className="ui button">Overview</button>
           <button className="ui button">Contact</button>

@@ -12,6 +12,7 @@ class Navbar extends React.Component {
       // Context Consumer works in both functional and class Components
       <ThemeContext.Consumer>
         {(context) => {
+          console.log(context);
           const { isDarkTheme, darkTheme, lightTheme } = context;
           const theme = isDarkTheme ? darkTheme : lightTheme;
           return (

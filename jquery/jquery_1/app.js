@@ -64,3 +64,34 @@ $(document).keypress(function (e) {
 $("h1").on("mouseover", function () {
   $("h1").css("color", "green");
 });
+
+$("h1").before(`<button>Hello before</button>`);
+$("h1").after(`<button>Hello after</button>`);
+$("h1").prepend(`<button>Hello prepend</button>`);
+$("h1").append(`<button>Hello append</button>`);
+
+// removes element ( all elements )
+$("button").remove();
+
+$("h1").before(`<button>click me</button>`);
+// animations in jquery
+$("button").on("click", function () {
+  // $("h1").hide(); // this animation hides an element
+  // $("h1").show(); // this animation shows an element
+  // $("h1").toggle(); // this animation hides and shows an element
+  //
+  // $("h1").fadeOut(); // first reduces the opacity of an element, then hides it
+  // $("h1").fadeIn(); // the same as above, but shows an element instead of hiding it
+  // $("h1").fadeToggle();
+  //
+  // $("h1").slideUp(); // collapses an element
+  // $("h1").slideDown();
+  // $("h1").slideToggle();
+  //
+  // animations
+  // $("h1").animate({ opacity: 0.5 });
+  // $("h1").animate({ margin: "20%" });
+  //
+  // chaining animations
+  $("h1").slideUp().slideDown().animate({ opacity: 0.5 });
+});
